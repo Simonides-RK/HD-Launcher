@@ -1,0 +1,27 @@
+<ranks>
+
+	<rank race="Foresters" min_wins="1"   max_wins="5"      name="[[22546523]]Underling[[]]" icon="Worker"/>
+	<rank race="Foresters" min_wins="6"   max_wins="10"     name="[[22554266]]Leader of the Pack[[]]" icon="Wolf Master"/>
+	<rank race="Foresters" min_wins="11"  max_wins="25"     name="[[22563323]]Life-Essence Channeler[[]]" icon="Shaman"/>
+	<rank race="Foresters" min_wins="26"  max_wins="50"     name="[[22579360]]Master of the Moonblade[[]]" icon="Hunter"/>
+	<rank race="Foresters" min_wins="51"  max_wins="100"    name="[[22580321]]Moonlit Beastherder[[]]" icon="queen of the wolves"/>
+	<rank race="Foresters" min_wins="101" max_wins="200"    name="[[22594632]]Forest's Playful Child[[]]" icon="Fairy"/>
+	<rank race="Foresters" min_wins="201" max_wins="999999" name="[[22603791]]Bearer of the Seeds of Life[[]]" icon="Seedkeeper"/>
+
+	<rank race="Humans" min_wins="1"   max_wins="5"         name="[[22614575]]Apprentice[[]]" icon="Swordsman"/>
+	<rank race="Humans" min_wins="6"   max_wins="10"        name="[[6242400]]Squire[[]]" icon="Squire"/>
+	<rank race="Humans" min_wins="11"  max_wins="25"        name="[[22620746]]Protector of the Realm[[]]" icon="Knight"/>
+	<rank race="Humans" min_wins="26"  max_wins="50"        name="[[22638063]]Dark Arts Initiate[[]]" icon="Shadow Mistress"/>
+	<rank race="Humans" min_wins="51"  max_wins="100"       name="[[22649771]]Master Royal Wizard[[]]" icon="wizard of the bow"/>
+	<rank race="Humans" min_wins="101" max_wins="200"       name="[[22654162]]Knight of Shimmering Storms[[]]" icon="Wind Rider"/>
+	<rank race="Humans" min_wins="201" max_wins="999999"    name="[[22665420]]Sunblessed of the Order[[]]" icon="Battle Angel"/>
+
+	<rank race="Darklings" min_wins="1"   max_wins="5"      name="[[4261487]]Disciple[[]]" icon="Disciple"/>
+	<rank race="Darklings" min_wins="6"   max_wins="10"     name="[[22676643]]Sacred Warrior[[]]" icon="Apostle of Death"/>
+	<rank race="Darklings" min_wins="11"  max_wins="25"     name="[[22685303]]Guardian of the Spires[[]]" icon="Dark Rider"/>
+	<rank race="Darklings" min_wins="26"  max_wins="50"     name="[[22690816]]Keeper of the Faith[[]]" icon="Fanatic"/>
+	<rank race="Darklings" min_wins="51"  max_wins="100"    name="[[22704876]]Night Council Inquisitor[[]]" icon="Night Assassin"/>
+	<rank race="Darklings" min_wins="101" max_wins="200"    name="[[22714883]]High Elder of the Night[[]]" icon="Soulmonger"/>
+	<rank race="Darklings" min_wins="201" max_wins="999999" name="[[22720089]]Grandmaster of Divine Arts[[]]" icon="Empath"/>
+
+</ranks>
