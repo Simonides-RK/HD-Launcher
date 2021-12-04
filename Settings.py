@@ -37,7 +37,7 @@ resolution['values'] = ('1024x768', '1280x720', '1360x768', '1600x900', '1920x10
 
 #Fullscreen
 
-fullscreen = IntVar()
+fullscreen = StringVar()
 full_check = ttk.Checkbutton(mainframe, text='Fullscreen', variable=fullscreen, onvalue='1', offvalue='0')
 full_check.grid(column=2, row=4, sticky=(W,E))
 
@@ -130,7 +130,7 @@ part['values'] = ('Low', 'Medium', 'High')
 
 #OpenSpy
 
-openspy = IntVar()
+openspy = StringVar()
 openspy_check = ttk.Checkbutton(mainframe, text='Activate OpenSpy', variable=openspy, onvalue='1', offvalue='0')
 openspy_check.grid(column=2, row=13, sticky=(W,E))
 
@@ -157,6 +157,15 @@ fog_check.grid(column=2, row=14, sticky=(W,E))
 wrapper = IntVar()
 wrapper_check = ttk.Checkbutton(mainframe, text='Activate DxWrapper', variable=wrapper, onvalue='1', offvalue='0')
 wrapper_check.grid(column=2, row=15, sticky=(W,E))
+
+#Hotkeys
+
+#ttk.Label(mainframe, text="  Hotkeys:").grid(column=1, row=16, sticky=W)
+
+#keys = StringVar()
+#keys = ttk.Combobox(mainframe, width = 9, textvariable=keys)
+#keys.grid(column=2, row=16, sticky=(W, E))
+#keys['values'] = ('Original', 'Grid')
 
 #Always Show Champion Healthbar
 
@@ -288,8 +297,6 @@ def save():
         dxwrapper1 = 'none.exe'
     else :
         dxwrapper1 = 'rk.exe'
-
-    import configparser
     
     wrapperconfig = configparser.ConfigParser()
     wrapperconfig.read('dxwrapper.ini')
@@ -307,7 +314,6 @@ def save():
     config['system']['DefaultPlayerName'] = str(username1)
 
         #openspy
-    openspy1 = openspy.get()
     if openspy.get() == '0':
         openspy1 = '0'
     else :
@@ -476,8 +482,8 @@ def save():
         constconfig['Frame']['src2'] = '32, 72, 512, 106'
         
 
-        constconfig['IndRaceIcons']['x'] = '1866'
-        constconfig['GamePlay']['HintYPosLeft'] = '812'
+        constconfig['IndRaceIcons']['x'] = '1866' #Independent Special Button positions
+        constconfig['GamePlay']['HintYPosLeft'] = '812' #Info Pop-Up Position
         constconfig['GamePlay']['HintYPosRight'] = '812'
         
     elif res_y == '720':
@@ -619,6 +625,16 @@ def save():
         
     with open('DATA\VXCONST.ini', 'w') as constfile:
         constconfig.write(constfile)
+
+    #profiles\noname
+    profileconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
+    profileconfig.read('PROFILES\\NONAME\\PLAYER.ini')
+    
+    profileconfig['Player']['name'] = str(username1)
+    profileconfig['Player 0']['plrname'] = str(username1)
+
+    with open('PROFILES\\NONAME\\PLAYER.ini', 'w') as profilefile:
+        profileconfig.write(profilefile)
         
     #DATA\INTERFACE\MENU\MainMenu.ini
     mainconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
@@ -1034,6 +1050,7 @@ def default():
     hp_altsw.set('0')
     hp_ctrl.set('6')
     hp_ctrlsw.set('0')
+    #keys.set('Original')
     
     
 
