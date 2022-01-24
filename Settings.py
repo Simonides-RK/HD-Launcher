@@ -212,7 +212,7 @@ hp_ctrlsw_check.grid(column=4, row=19, sticky=(W,E))
 #-------------------------------------Read DATA------------------------------
 import configparser
 
-config = configparser.ConfigParser()
+config = configparser.ConfigParser(allow_no_value=True, strict=False)
 config.read('config.ini')
 
 username.set(config['system']['DefaultPlayerName'])
@@ -233,7 +233,7 @@ openspy.set(config['system']['gamespyingame'])
 fullscreen.set(config['system']['fullscreen'])
 
 
-settingsconfig = configparser.ConfigParser()
+settingsconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
 settingsconfig.read('vxSettings.ini')
 
 lang.set(settingsconfig['Language']['default'])
@@ -298,7 +298,7 @@ def save():
     else :
         dxwrapper1 = 'rk.exe'
     
-    wrapperconfig = configparser.ConfigParser()
+    wrapperconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
     wrapperconfig.read('dxwrapper.ini')
     wrapperconfig['General']['IncludeProcess'] = str(dxwrapper1)
 
@@ -359,7 +359,7 @@ def save():
         config.write(configfile)
 
     #-vxSettings.ini-
-    settingsconfig = configparser.ConfigParser()
+    settingsconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
     settingsconfig.read('vxSettings.ini')
 
                 #language
@@ -437,7 +437,7 @@ def save():
 
         
     #--DATA\VXCONST.ini--
-    constconfig = configparser.ConfigParser()
+    constconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
     constconfig.read('DATA\VXCONST.ini')
     
     #Frame
@@ -1023,8 +1023,75 @@ def save():
 
     with open('DATA\INTERFACE\CMDBAR.ini', 'w') as commonfile:
         commonconfig.write(commonfile)
-      
-      
+
+    #EDITOR\infobar.ini
+        
+    infoconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
+    infoconfig.read('DATA\INTERFACE\EDITOR\INFOBAREDITOR.ini')
+
+    if res_y == '1080':
+        infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1920, 80'
+        infoconfig['Background']['RectWH'] = '0, 0, 1920, 80'
+        infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+
+    elif res_y == '720':
+        infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1280, 80'
+        infoconfig['Background']['RectWH'] = '0, 0, 1280, 80'
+        infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    elif res_x == '1360':
+        infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1360, 80'
+        infoconfig['Background']['RectWH'] = '0, 0, 1360, 80'
+        infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    elif res_y == '900':
+        infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1600, 80'
+        infoconfig['Background']['RectWH'] = '0, 0, 1600, 80'
+        infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+
+    else:
+        infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1280, 80'
+        infoconfig['Background']['RectWH'] = '0, 0, 1280, 80'
+        infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    with open('DATA\INTERFACE\EDITOR\INFOBAREDITOR.ini', 'w') as infofile:
+        infoconfig.write(infofile)
+
+
+    #EDITOR\cmdbar.ini
+        
+    editcmdconfig = configparser.ConfigParser(allow_no_value=True, strict=False)
+    editcmdconfig.read('DATA\INTERFACE\EDITOR\CMDBAREDITOR.ini')
+
+    if res_y == '1080':
+        editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1920, 80'
+        editcmdconfig['Background']['RectWH'] = '0, 0, 1920, 80'
+        editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+
+    elif res_y == '720':
+        editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1280, 80'
+        editcmdconfig['Background']['RectWH'] = '0, 0, 1280, 80'
+        editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    elif res_x == '1360':
+        editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1360, 80'
+        editcmdconfig['Background']['RectWH'] = '0, 0, 1360, 80'
+        editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    elif res_y == '900':
+        editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1600, 80'
+        editcmdconfig['Background']['RectWH'] = '0, 0, 1600, 80'
+        editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+
+    else:
+        editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1280, 80'
+        editcmdconfig['Background']['RectWH'] = '0, 0, 1280, 80'
+        editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+
+    with open('DATA\INTERFACE\EDITOR\CMDBAREDITOR.ini', 'w') as editcmdfile:
+        editcmdconfig.write(infofile)
+
+        
 blankspace_z = tk.Label(mainframe, width=2, height=2)
 blankspace_z.grid(column=1, row=34)
 
