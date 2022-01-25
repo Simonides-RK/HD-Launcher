@@ -1033,26 +1033,31 @@ def save():
         infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1920, 80'
         infoconfig['Background']['RectWH'] = '0, 0, 1920, 80'
         infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+        infoconfig['AreaVisibility']['RectWH'] = '#277+448#, 5, 80, 80'
 
     elif res_y == '720':
         infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1280, 80'
         infoconfig['Background']['RectWH'] = '0, 0, 1280, 80'
         infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        infoconfig['AreaVisibility']['RectWH'] = '#277+128#, 5, 80, 80'
 
     elif res_x == '1360':
         infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1360, 80'
         infoconfig['Background']['RectWH'] = '0, 0, 1360, 80'
         infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        infoconfig['AreaVisibility']['RectWH'] = '#277+168#, 5, 80, 80'
 
     elif res_y == '900':
         infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1600, 80'
         infoconfig['Background']['RectWH'] = '0, 0, 1600, 80'
         infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+        infoconfig['AreaVisibility']['RectWH'] = '#277+288#, 5, 80, 80'
 
     else:
         infoconfig['InfobarEditor']['RectWH'] = '0, 0, 1280, 80'
         infoconfig['Background']['RectWH'] = '0, 0, 1280, 80'
         infoconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        infoconfig['AreaVisibility']['RectWH'] = '#277+128#, 5, 80, 80'
 
     with open('DATA\INTERFACE\EDITOR\INFOBAREDITOR.ini', 'w') as infofile:
         infoconfig.write(infofile)
@@ -1067,26 +1072,31 @@ def save():
         editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1920, 80'
         editcmdconfig['Background']['RectWH'] = '0, 0, 1920, 80'
         editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+        editcmdconfig['NewScenario']['RectWH'] = '#232+448#, 6, 80, 68'
 
     elif res_y == '720':
         editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1280, 80'
         editcmdconfig['Background']['RectWH'] = '0, 0, 1280, 80'
         editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        editcmdconfig['NewScenario']['RectWH'] = '#232+128#, 6, 80, 68'
 
     elif res_x == '1360':
         editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1360, 80'
         editcmdconfig['Background']['RectWH'] = '0, 0, 1360, 80'
         editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        editcmdconfig['NewScenario']['RectWH'] = '#232+168#, 6, 80, 68'
 
     elif res_y == '900':
         editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1600, 80'
         editcmdconfig['Background']['RectWH'] = '0, 0, 1600, 80'
         editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar_hd.bmp'
+        editcmdconfig['NewScenario']['RectWH'] = '#232+288#, 6, 80, 68'
 
     else:
         editcmdconfig['CmdbarEditor']['RectWH'] = '0, 0, 1280, 80'
         editcmdconfig['Background']['RectWH'] = '0, 0, 1280, 80'
         editcmdconfig['Background']['Image'] = 'assets/interface/editor/cmdbar.bmp'
+        editcmdconfig['NewScenario']['RectWH'] = '#232+128#, 6, 80, 68'
 
     with open('DATA\INTERFACE\EDITOR\CMDBAREDITOR.ini', 'w') as editcmdfile:
         editcmdconfig.write(infofile)
